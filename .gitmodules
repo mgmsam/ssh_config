@@ -1,0 +1,3 @@
+[submodule "scripts/shell_library"]
+	path = scripts/shell_library
+	url = https://github.com/mgmsam/shell_library.git
