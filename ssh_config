@@ -1,0 +1,15 @@
+# Hosts ################################################################
+Include                     ~/.ssh/_DOMAIN_/custom_config.d/*.conf
+Include                     ~/.ssh/_DOMAIN_/ssh_config.d/*.conf
+
+# General Parameters ###################################################
+Host *._DOMAIN_
+    User                     root
+    Port                     22
+    ServerAliveInterval      10
+    UserKnownHostsFile       ~/.ssh/_DOMAIN_/known_hosts.d/%k
+    IdentityFile             ~/.ssh/_DOMAIN_/ssh_keys/id_ed25519
+    HostkeyAlgorithms        +ed25519
+    PubkeyAcceptedKeyTypes   +ed25519
+    Ciphers                  aes128-ctr,aes192-ctr,aes256-ctr,aes128-gcm@openssh.com,aes256-gcm@openssh.com,chacha20-poly1305@openssh.com
+    PreferredAuthentications publickey,password
